@@ -1,0 +1,319 @@
+{
+    "name": "{{name}}",
+    "fullName": "{{name}}",
+    "settings": {
+        "idField": "_id",
+        "fields": null,
+        "populates": null,
+        "pageSize": 10,
+        "maxPageSize": 100,
+        "maxLimit": -1,
+        "entityValidator": null,
+        "useDotNotation": false,
+        "cacheCleanEventType": "broadcast"
+    },
+    "metadata": {
+        "$category": "database",
+        "$description": "Official Data Access service",
+        "$official": true,
+        "$package": {
+            "name": "moleculer-db",
+            "version": "0.8.15",
+            "repo": "git+https://github.com/moleculerjs/moleculer-db.git"
+        }
+    },
+    "actions": {
+        "{{name}}.find": {
+            "cache": {
+                "keys": [
+                    "populate",
+                    "fields",
+                    "limit",
+                    "offset",
+                    "sort",
+                    "search",
+                    "searchFields",
+                    "query"
+                ]
+            },
+            "params": {
+                "populate": [
+                    {
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "type": "array",
+                        "optional": true,
+                        "items": "string"
+                    }
+                ],
+                "fields": [
+                    {
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "type": "array",
+                        "optional": true,
+                        "items": "string"
+                    }
+                ],
+                "limit": {
+                    "type": "number",
+                    "integer": true,
+                    "min": 0,
+                    "optional": true,
+                    "convert": true
+                },
+                "offset": {
+                    "type": "number",
+                    "integer": true,
+                    "min": 0,
+                    "optional": true,
+                    "convert": true
+                },
+                "sort": {
+                    "type": "string",
+                    "optional": true
+                },
+                "search": {
+                    "type": "string",
+                    "optional": true
+                },
+                "searchFields": [
+                    {
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "type": "array",
+                        "optional": true,
+                        "items": "string"
+                    }
+                ],
+                "query": [
+                    {
+                        "type": "object",
+                        "optional": true
+                    },
+                    {
+                        "type": "string",
+                        "optional": true
+                    }
+                ]
+            },
+            "rawName": "{{name}}.find",
+            "name": "{{name}}.find"
+        },
+        "{{name}}.count": {
+            "cache": {
+                "keys": [
+                    "search",
+                    "searchFields",
+                    "query"
+                ]
+            },
+            "params": {
+                "search": {
+                    "type": "string",
+                    "optional": true
+                },
+                "searchFields": [
+                    {
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "type": "array",
+                        "optional": true,
+                        "items": "string"
+                    }
+                ],
+                "query": [
+                    {
+                        "type": "object",
+                        "optional": true
+                    },
+                    {
+                        "type": "string",
+                        "optional": true
+                    }
+                ]
+            },
+            "rawName": "{{name}}.count",
+            "name": "{{name}}.count"
+        },
+        "{{name}}.list": {
+            "cache": {
+                "keys": [
+                    "populate",
+                    "fields",
+                    "page",
+                    "pageSize",
+                    "sort",
+                    "search",
+                    "searchFields",
+                    "query"
+                ]
+            },
+            "rest": "GET /",
+            "params": {
+                "populate": [
+                    {
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "type": "array",
+                        "optional": true,
+                        "items": "string"
+                    }
+                ],
+                "fields": [
+                    {
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "type": "array",
+                        "optional": true,
+                        "items": "string"
+                    }
+                ],
+                "page": {
+                    "type": "number",
+                    "integer": true,
+                    "min": 1,
+                    "optional": true,
+                    "convert": true
+                },
+                "pageSize": {
+                    "type": "number",
+                    "integer": true,
+                    "min": 0,
+                    "optional": true,
+                    "convert": true
+                },
+                "sort": {
+                    "type": "string",
+                    "optional": true
+                },
+                "search": {
+                    "type": "string",
+                    "optional": true
+                },
+                "searchFields": [
+                    {
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "type": "array",
+                        "optional": true,
+                        "items": "string"
+                    }
+                ],
+                "query": [
+                    {
+                        "type": "object",
+                        "optional": true
+                    },
+                    {
+                        "type": "string",
+                        "optional": true
+                    }
+                ]
+            },
+            "rawName": "{{name}}.list",
+            "name": "{{name}}.list"
+        },
+        "{{name}}.create": {
+            "rest": "POST /",
+            "rawName": "{{name}}.create",
+            "name": "{{name}}.create"
+        },
+        "{{name}}.insert": {
+            "params": {
+                "entity": {
+                    "type": "object",
+                    "optional": true
+                },
+                "entities": {
+                    "type": "array",
+                    "optional": true
+                }
+            },
+            "rawName": "{{name}}.insert",
+            "name": "{{name}}.insert"
+        },
+        "{{name}}.get": {
+            "cache": {
+                "keys": [
+                    "id",
+                    "populate",
+                    "fields",
+                    "mapping"
+                ]
+            },
+            "rest": "GET /:id",
+            "params": {
+                "id": [
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "array"
+                    }
+                ],
+                "populate": [
+                    {
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "type": "array",
+                        "optional": true,
+                        "items": "string"
+                    }
+                ],
+                "fields": [
+                    {
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "type": "array",
+                        "optional": true,
+                        "items": "string"
+                    }
+                ],
+                "mapping": {
+                    "type": "boolean",
+                    "optional": true
+                }
+            },
+            "rawName": "{{name}}.get",
+            "name": "{{name}}.get"
+        },
+        "{{name}}.update": {
+            "rest": "PUT /:id",
+            "rawName": "{{name}}.update",
+            "name": "{{name}}.update"
+        },
+        "{{name}}.remove": {
+            "rest": "DELETE /:id",
+            "params": {
+                "id": {
+                    "type": "any"
+                }
+            },
+            "rawName": "{{name}}.remove",
+            "name": "{{name}}.remove"
+        }
+    },
+    "events": {}
+}

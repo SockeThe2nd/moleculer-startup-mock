@@ -1,0 +1,217 @@
+{
+    "ver": "4",
+    "sender": "{{id}}",
+    "ipList": [
+        "192.168.208.1"
+    ],
+    "hostname": "{{host}}",
+    "instanceID": "{{id}}",
+    "client": {
+        "type": "nodejs",
+        "version": "0.14.16",
+        "langVersion": "v14.17.3"
+    },
+    "config": {},
+    "port": null,
+    "seq": 2,
+    "metadata": {},
+    "services": [
+        {
+            "name": "$node",
+            "fullName": "$node",
+            "settings": {},
+            "metadata": {},
+            "actions": {
+                "$node.list": {
+                    "cache": false,
+                    "tracing": false,
+                    "params": {
+                        "withServices": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "onlyAvailable": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        }
+                    },
+                    "rawName": "list",
+                    "name": "$node.list"
+                },
+                "$node.services": {
+                    "cache": false,
+                    "tracing": false,
+                    "params": {
+                        "onlyLocal": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "skipInternal": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "withActions": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "withEvents": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "onlyAvailable": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "grouping": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": true
+                        }
+                    },
+                    "rawName": "services",
+                    "name": "$node.services"
+                },
+                "$node.actions": {
+                    "cache": false,
+                    "tracing": false,
+                    "params": {
+                        "onlyLocal": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "skipInternal": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "withEndpoints": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "onlyAvailable": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        }
+                    },
+                    "rawName": "actions",
+                    "name": "$node.actions"
+                },
+                "$node.events": {
+                    "cache": false,
+                    "tracing": false,
+                    "params": {
+                        "onlyLocal": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "skipInternal": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "withEndpoints": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        },
+                        "onlyAvailable": {
+                            "type": "boolean",
+                            "optional": true,
+                            "convert": true,
+                            "default": false
+                        }
+                    },
+                    "rawName": "events",
+                    "name": "$node.events"
+                },
+                "$node.health": {
+                    "cache": false,
+                    "tracing": false,
+                    "rawName": "health",
+                    "name": "$node.health"
+                },
+                "$node.options": {
+                    "cache": false,
+                    "tracing": false,
+                    "params": {},
+                    "rawName": "options",
+                    "name": "$node.options"
+                },
+                "$node.metrics": {
+                    "cache": false,
+                    "tracing": false,
+                    "params": {
+                        "types": {
+                            "type": "multi",
+                            "optional": true,
+                            "rules": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": "string"
+                                }
+                            ]
+                        },
+                        "includes": {
+                            "type": "multi",
+                            "optional": true,
+                            "rules": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": "string"
+                                }
+                            ]
+                        },
+                        "excludes": {
+                            "type": "multi",
+                            "optional": true,
+                            "rules": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": "string"
+                                }
+                            ]
+                        }
+                    },
+                    "rawName": "metrics",
+                    "name": "$node.metrics"
+                }
+            },
+            "events": {}
+        }
+    ]
+}

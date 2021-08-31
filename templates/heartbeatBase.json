@@ -1,0 +1,7 @@
+{
+    "sender": "{{id}}",
+    "ver": "4",
+    "cpu": 7,
+    "seq": 2,
+    "instanceID": "{{id}}"
+}
